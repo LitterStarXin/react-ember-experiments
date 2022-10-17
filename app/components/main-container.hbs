@@ -1,0 +1,13 @@
+<section class="action-button-group">
+    <button {{action "onButtonClick" true}}>Ember Container</button>
+    <button {{action "onButtonClick" false}}>Glimmer Container</button>
+</section>
+ <hr />
+<section>
+    {{#if this.isEmberContainer}}
+        <EmberContainer />
+    {{else}}
+        <GlimmerContainer />
+    {{/if}}
+</section>
+

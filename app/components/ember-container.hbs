@@ -1,0 +1,20 @@
+<section class="container">
+     <h1>Hello from Ember Container</h1>
+    <section class="container-action-button-group">
+        <button {{action "onButtonClick" "ember" }}>Ember Component</button>
+        <button {{action "onButtonClick" "glimmer" }}>Glimmer Component</button>
+        <button {{action "onButtonClick" "react" }}>React Component</button>
+    </section>
+        {{#if this.isShowActionBtn}}
+          <button id="increase-count-btn" {{action "onIncreaseCountClick"}}>Increase count in child component</button>
+        {{/if}}
+    <section>
+        {{#if (equal this.componentType "ember")}}
+            <EmberComponent @count={{this.count}}/>
+        {{else if (equal this.componentType "glimmer")}}
+            <GlimmerComponent @count={{this.count}}/>
+        {{else}}
+             <ReactComponent @word={{this.count}} @onClickReactButton={{action 'onToggleEmberButton'}}/>
+        {{/if}}
+    </section>
+</section>

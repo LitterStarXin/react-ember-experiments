@@ -1,0 +1,35 @@
+{{!-- <section>
+    <h1>Hello from Glimmer Container</h1>
+        {{#if this.isShowButton}}
+           <button
+            type="button"
+            onclick={{this.onChangeReactContent}}
+            >
+            Click Me From Ember to increase count in React
+        </button>
+        {{/if}}
+        <hr />
+       <BasicReactComponent @word={{this.count}} @onClickReactButton={{this.onToggleEmberButton}}/>
+</section> --}}
+
+<section class="container">
+     <h1>Hello from Glimmer Container</h1>
+    <section class="container-action-button-group">
+        <button type="button" onclick={{fn this.onChangeReactContent "ember"}}>Ember Component</button>
+    </section>
+        {{#if this.isShowActionBtn}}
+
+          {{!-- <button id="increase-count-btn" {{action "onIncreaseCountClick"}}>Increase count in child component</button> --}}
+        {{/if}}
+
+        <button type="button" {{on "click" (fn this.toggleCompleted true)}}>Complete</button>
+    {{!-- <section>
+        {{#if (equal this.componentType "ember")}}
+            <EmberComponent @count={{this.count}}/>
+        {{else if (equal this.componentType "glimmer")}}
+            <GlimmerComponent @count={{this.count}}/>
+        {{else}}
+             <ReactComponent @word={{this.count}} @onClickReactButton={{action 'onToggleEmberButton'}}/>
+        {{/if}}
+    </section> --}}
+</section>
